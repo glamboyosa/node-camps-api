@@ -1,4 +1,4 @@
-##NODE + EXPRESS APPLICATION
+<h1>NODE + EXPRESS APPLICATION</h1>
 
 A Node + Express REST API complete with authorization and authentication. 
 End points to hit are 
