@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose --watchAll --maxWorkers=1 --coverage"
+    "test": "jest --verbose --watchAll --maxWorkers=1 --coverage",
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "10.14.2"
   },
   "keywords": [],
   "author": "",
