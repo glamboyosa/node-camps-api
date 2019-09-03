@@ -1,4 +1,5 @@
 {
   "jwtPrivateKey": "camps_jwtPrivateKey",
-  "pass": "google_pass"
+  "pass": "google_pass",
+  "db": "camps_db"
 }
