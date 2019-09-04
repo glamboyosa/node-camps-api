@@ -11,7 +11,7 @@ router.get("/me", auth, async (req, res) => {
   const user = await User.findById(req.user._id).select("-password");
   res.send(user);
 });
-router.post("/", [auth, admin], async (req, res) => {
+router.post("/", async (req, res) => {
   const { error } = Validate(req.body);
   if (error) res.send(error.details[0].message);
 
