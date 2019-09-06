@@ -1,4 +1,4 @@
-const { Camp, Validate } = require('../models/camp');
+const { Camp, validate } = require('../models/camp');
 const express = require('express');
 const router = express.Router();
 const auth = require('../middleware/auth');
@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
 //MOST LIKELY WILL REPLACE THIS POST METHOD WITH A METHOD THAT SEEDS THE MONGO DATABASE. JUST CURRENTLY IMPLEMENTING POST
 //BECAUSE OF TESTING REASONS
 router.post('/', async (req, res) => {
-  const { error } = Validate(req.body);
+  const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
   const camp = new Camp({
     name: req.body.name,
@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
   res.send(camp);
 });
 router.put('/:id', [auth, admin], async (req, res) => {
-  const { error } = Validate(req.body);
+  const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
   const camp = await Camp.findByIdAndUpdate(req.params.id, {
     name: req.body.name,
